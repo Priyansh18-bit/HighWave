@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HighWave — Modern Store</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="promo-banner">✦ Free shipping on orders over ₹999 &nbsp;|&nbsp; Use code WAVE10 for 10% off ✦</div>
+
+<nav>
+  <a href="#" class="nav-logo">High<span>Wave</span></a>
+  <ul class="nav-links">
+    <li><a href="#" class="active">Home</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Collections</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="cart-btn" onclick="openCart()">
+      🛒 Cart <span class="cart-count" id="cart-count">0</span>
+    </button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div>
+    <div class="hero-eyebrow"><span class="hero-dot"></span> New arrivals just dropped</div>
+    <h1>Style that <em>speaks</em> for itself.</h1>
+    <p>Curated collections of premium essentials — thoughtfully designed, effortlessly yours. Shop the latest drops.</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">Shop now</a>
+      <a href="#" class="btn-secondary">View lookbook</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-stack">
+      <div class="hero-card-back"></div>
+      <div class="hero-card-main">
+        <div class="hero-card-img">👟</div>
+        <div class="hero-card-info">
+          <h3>Wave Runner Pro</h3>
+          <p>₹4,299 · Limited edition</p>
+        </div>
+      </div>
+      <div class="hero-badge">New ✦</div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num">2.4k</div>
+          <div class="stat-label">Happy customers</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="filters-section">
+  <div class="filters-row">
+    <span class="filters-label">Browse by:</span>
+    <button class="filter-pill active" onclick="filterProducts(this, 'all')">All</button>
+    <button class="filter-pill" onclick="filterProducts(this, 'clothing')">Clothing</button>
+    <button class="filter-pill" onclick="filterProducts(this, 'footwear')">Footwear</button>
+    <button class="filter-pill" onclick="filterProducts(this, 'accessories')">Accessories</button>
+    <button class="filter-pill" onclick="filterProducts(this, 'electronics')">Electronics</button>
+  </div>
+</section>
+
+<section class="products-section" id="products">
+  <div class="section-header">
+    <h2 class="section-title">Featured Products</h2>
+    <span class="section-count" id="product-count">12 products</span>
+  </div>
+  <div class="products-grid" id="products-grid"></div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-brand">HighWave</div>
+      <p class="footer-desc">Modern essentials for modern lives. Curated with care, delivered with love.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <ul>
+        <li><a href="#">New Arrivals</a></li>
+        <li><a href="#">Best Sellers</a></li>
+        <li><a href="#">Sale</a></li>
+        <li><a href="#">Collections</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Shipping Info</a></li>
+        <li><a href="#">Returns</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 HighWave. All rights reserved.</p>
+    <div class="footer-badges">
+      <span class="footer-badge">Visa</span>
+      <span class="footer-badge">Mastercard</span>
+      <span class="footer-badge">UPI</span>
+    </div>
+  </div>
+</footer>
+
+<!-- CART OVERLAY -->
+<div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cart-drawer">
+  <div class="cart-header">
+    <span class="cart-title">Your Cart</span>
+    <button class="cart-close" onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cart-items-list"></div>
+  <div class="cart-footer" id="cart-footer" style="display:none;">
+    <div class="cart-totals">
+      <div class="cart-row"><span>Subtotal</span><span id="subtotal">₹0</span></div>
+      <div class="cart-row"><span>Shipping</span><span>Free</span></div>
+      <div class="cart-row total"><span>Total</span><span id="total">₹0</span></div>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout →</button>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
